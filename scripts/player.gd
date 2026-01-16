@@ -1,3 +1,4 @@
+class_name Player
 extends CharacterBody2D
 
 # TODO: Improve jump controls using https://youtu.be/IOe1aGY6hXA

@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://bpba5h7qo403v"]
+[gd_scene load_steps=6 format=3 uid="uid://bpba5h7qo403v"]
 
 [ext_resource type="PackedScene" uid="uid://cg8cr5s14uh4m" path="res://scenes/player.tscn" id="1_uwrxv"]
 [ext_resource type="Texture2D" uid="uid://dsgwyj4ta7731" path="res://assets/sprites/world_tileset.png" id="1_yqjtg"]
+[ext_resource type="PackedScene" uid="uid://dt0ylonok05yv" path="res://scenes/pickup.tscn" id="3_lnu2h"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_lnu2h"]
 texture = ExtResource("1_yqjtg")
@@ -182,3 +183,12 @@ position = Vector2(17, 69)
 [node name="Camera2D" type="Camera2D" parent="Player"]
 zoom = Vector2(4, 4)
 position_smoothing_enabled = true
+
+[node name="Pickup" parent="." instance=ExtResource("3_lnu2h")]
+position = Vector2(72, 103)
+
+[node name="Pickup2" parent="." instance=ExtResource("3_lnu2h")]
+position = Vector2(200, 102)
+
+[node name="Pickup3" parent="." instance=ExtResource("3_lnu2h")]
+position = Vector2(216, 102)
