@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="Jump" load_steps=2 format=3 uid="uid://6iispixm8kfq"]
+
+[ext_resource type="Script" uid="uid://cdc5awx84mt0t" path="res://custom_resources/powerups/jump.gd" id="1_1yhlj"]
+
+[resource]
+script = ExtResource("1_1yhlj")
+color = Color(0, 1, 0, 1)
+metadata/_custom_type_script = "uid://beglgepc4pwam"
