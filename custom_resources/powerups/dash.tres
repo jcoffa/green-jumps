@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="Dash" load_steps=2 format=3 uid="uid://duhbvaogicnxn"]
+
+[ext_resource type="Script" uid="uid://f5qh8n7xwtk" path="res://custom_resources/powerups/dash.gd" id="1_vvcum"]
+
+[resource]
+script = ExtResource("1_vvcum")
+color = Color(0, 0.33333334, 1, 1)
+metadata/_custom_type_script = "uid://beglgepc4pwam"

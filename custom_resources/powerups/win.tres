@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="Win" load_steps=2 format=3 uid="uid://duemd85d7d4na"]
+
+[ext_resource type="Script" uid="uid://bjxgyf1kt2fb5" path="res://custom_resources/powerups/win.gd" id="1_7vvvv"]
+
+[resource]
+script = ExtResource("1_7vvvv")
+color = Color(1, 1, 0, 1)
+metadata/_custom_type_script = "uid://beglgepc4pwam"
