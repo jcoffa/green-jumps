@@ -4,5 +4,6 @@
 
 [resource]
 script = ExtResource("1_vvcum")
+id = "Dash"
 color = Color(0, 0.33333334, 1, 1)
 metadata/_custom_type_script = "uid://beglgepc4pwam"

@@ -4,5 +4,6 @@
 
 [resource]
 script = ExtResource("1_1yhlj")
+id = "Jump"
 color = Color(0, 1, 0, 1)
 metadata/_custom_type_script = "uid://beglgepc4pwam"
