@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=4 uid="uid://bpba5h7qo403v"]
+[gd_scene format=4 uid="uid://bpba5h7qo403v"]
 
 [ext_resource type="PackedScene" uid="uid://cg8cr5s14uh4m" path="res://scenes/player.tscn" id="1_uwrxv"]
 [ext_resource type="Texture2D" uid="uid://cyf705376ok3m" path="res://assets/sprites/monochrome_tilemap_transparent_packed.png" id="3_lnu2h"]
@@ -1382,12 +1382,12 @@ terrain_set_0/terrain_7/name = "Grass (Clean)"
 terrain_set_0/terrain_7/color = Color(0.25, 0.5, 0.5, 1)
 sources/0 = SubResource("TileSetAtlasSource_lbhrr")
 
-[node name="Game" type="Node2D"]
+[node name="Game" type="Node2D" unique_id=447309482]
 
-[node name="Player" parent="." instance=ExtResource("1_uwrxv")]
+[node name="Player" parent="." unique_id=342522236 instance=ExtResource("1_uwrxv")]
 position = Vector2(17, 69)
 
-[node name="Camera2D" type="Camera2D" parent="Player"]
+[node name="Camera2D" type="Camera2D" parent="Player" unique_id=28646975]
 zoom = Vector2(3, 3)
 limit_left = -10000001
 limit_right = 9999999
@@ -1395,38 +1395,38 @@ limit_bottom = 160
 limit_smoothed = true
 position_smoothing_enabled = true
 
-[node name="Killzone" parent="." instance=ExtResource("4_lbhrr")]
+[node name="Killzone" parent="." unique_id=760165552 instance=ExtResource("4_lbhrr")]
 position = Vector2(0, 200)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Killzone"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Killzone" unique_id=745221147]
 shape = SubResource("WorldBoundaryShape2D_iywne")
 
-[node name="TileMapLayer" type="TileMapLayer" parent="."]
+[node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=1326680887]
 tile_map_data = PackedByteArray("AAD2/wgAAAAPABEAAAD3/wgAAAAPABEAAAD4/wgAAAAPABEAAAD5/wgAAAAPABEAAAD6/wgAAAAPABEAAAD7/wgAAAAPABEAAAD8/wgAAAAPABEAAAD9/wgAAAAPABEAAAD+/wgAAAAPABEAAAD//wgAAAAPABEAAAD//wkAAAAPABMAAAAAAAkAAAAPABMAAAABAAkAAAAPABMAAAACAAkAAAAPABMAAAADAAkAAAAPABMAAAAEAAkAAAAPABMAAAAFAAkAAAAPABMAAAAGAAkAAAAPABMAAAAHAAkAAAAPABMAAAAIAAkAAAAPABMAAAAJAAkAAAAQABMAAAAJAAgAAAAQABIAAAAIAAgAAAAPABIAAAAHAAgAAAAPABEAAAAGAAgAAAAPABEAAAAFAAgAAAAPABEAAAAEAAgAAAAPABEAAAADAAgAAAAPABEAAAACAAgAAAAPABEAAAABAAgAAAAPABEAAAAAAAgAAAAPABEAAAD+/wkAAAAPABMAAAD9/wkAAAAPABMAAAD8/wkAAAAPABMAAAD7/wkAAAAPABMAAAD6/wkAAAAPABMAAAD5/wkAAAAPABMAAAD4/wkAAAAPABMAAAD3/wkAAAAPABMAAAD2/wkAAAAPABMAAAD1/wkAAAAPABMAAAD1/wgAAAAPABEAAAD0/wkAAAAPABMAAAD0/wgAAAAPABEAAADz/wkAAAAPABMAAADz/wgAAAAPABEAAADy/wkAAAAPABMAAADy/wgAAAAPABEAAADx/wkAAAAPABMAAADx/wgAAAAPABEAAADw/wkAAAAPABMAAADw/wgAAAAPABEAAADv/wkAAAAPABMAAADv/wgAAAAPABEAAADu/wkAAAAOABMAAADu/wgAAAAOABEAAAAJAAcAAAAQABIAAAAJAAYAAAAQABIAAAAJAAUAAAAQABIAAAAJAAQAAAAQABIAAAAJAAMAAAAQABIAAAAJAAIAAAAQABEAAAAIAAcAAAAOABIAAAAIAAYAAAAOABIAAAAIAAUAAAAOABIAAAAIAAQAAAAOABIAAAAIAAMAAAAOABIAAAAIAAIAAAAOABEAAAASAAQAAAAQABMAAAASAAMAAAAQABIAAAASAAIAAAAQABIAAAARAAQAAAAPABMAAAARAAMAAAAPABIAAAARAAIAAAAPABIAAAAQAAQAAAAPABMAAAAQAAMAAAAPABIAAAAQAAIAAAAPABIAAAAPAAQAAAAPABMAAAAPAAMAAAAPABIAAAAPAAIAAAAPABIAAAAOAAQAAAAPABMAAAAOAAMAAAAPABIAAAAOAAIAAAAPABIAAAANAAQAAAAPABMAAAANAAMAAAAPABIAAAANAAIAAAAPABIAAAASAAEAAAAQABIAAAASAAAAAAAQABIAAAASAP//AAAQABIAAAASAP7/AAAQABIAAAASAP3/AAAQABIAAAASAPz/AAAQABEAAAARAAEAAAAPABIAAAARAAAAAAAPABIAAAARAP//AAAPABIAAAARAP7/AAAPABIAAAARAP3/AAAPABIAAAARAPz/AAAPABEAAAAQAAEAAAAPABIAAAAQAAAAAAAPABIAAAAQAP//AAAPABIAAAAQAP7/AAAPABIAAAAQAP3/AAAPABIAAAAQAPz/AAAPABEAAAAPAAEAAAAPABIAAAAPAAAAAAAPABIAAAAPAP//AAAPABIAAAAPAP7/AAAPABIAAAAPAP3/AAAPABIAAAAPAPz/AAAPABEAAAAOAAEAAAAPABIAAAAOAAAAAAAPABIAAAAOAP//AAAPABIAAAAOAP7/AAAPABIAAAAOAP3/AAAPABIAAAAOAPz/AAAPABEAAAANAAEAAAAPABIAAAANAAAAAAAPABIAAAANAP//AAAPABIAAAANAP7/AAAPABIAAAANAP3/AAAPABIAAAANAPz/AAAPABEAAAASAAkAAAAQABMAAAASAAgAAAAQABEAAAARAAkAAAAPABMAAAARAAgAAAAPABEAAAAQAAkAAAAPABMAAAAQAAgAAAAPABEAAAAPAAkAAAAOABMAAAAPAAgAAAAOABEAAAAMAAQAAAAOABMAAAAMAAMAAAAOABIAAAAMAAIAAAAOABIAAAAMAAEAAAAOABIAAAAMAAAAAAAOABIAAAAMAP//AAAOABIAAAAMAP7/AAAOABIAAAAMAP3/AAAOABIAAAAMAPz/AAAOABEAAAA=")
 tile_set = SubResource("TileSet_iywne")
 
-[node name="MeasuringBackground" type="Sprite2D" parent="."]
+[node name="MeasuringBackground" type="Sprite2D" parent="." unique_id=2066142998]
 position = Vector2(0, 16)
 texture = ExtResource("4_p57ef")
 
-[node name="MeasuringBackground2" type="Sprite2D" parent="."]
+[node name="MeasuringBackground2" type="Sprite2D" parent="." unique_id=1096290651]
 position = Vector2(-171, 106)
 rotation = -1.5707964
 texture = ExtResource("4_p57ef")
 flip_h = true
 
-[node name="Pickup" parent="." instance=ExtResource("5_u5sy4")]
+[node name="Pickup" parent="." unique_id=109588676 instance=ExtResource("5_u5sy4")]
 position = Vector2(61, 115)
 powerup = ExtResource("6_gee14")
 
-[node name="Pickup2" parent="." instance=ExtResource("5_u5sy4")]
+[node name="Pickup2" parent="." unique_id=739092047 instance=ExtResource("5_u5sy4")]
 position = Vector2(80, 117)
 powerup = ExtResource("6_gee14")
 
-[node name="Pickup3" parent="." instance=ExtResource("5_u5sy4")]
+[node name="Pickup3" parent="." unique_id=533295460 instance=ExtResource("5_u5sy4")]
 position = Vector2(101, 116)
 powerup = ExtResource("7_gee14")
 
-[node name="Pickup4" parent="." instance=ExtResource("5_u5sy4")]
+[node name="Pickup4" parent="." unique_id=1664666669 instance=ExtResource("5_u5sy4")]
 position = Vector2(272, 113)
 powerup = ExtResource("8_gee14")

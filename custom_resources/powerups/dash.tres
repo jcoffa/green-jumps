@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="Dash" load_steps=2 format=3 uid="uid://duhbvaogicnxn"]
+[gd_resource type="Resource" script_class="Dash" format=3 uid="uid://duhbvaogicnxn"]
 
 [ext_resource type="Script" uid="uid://f5qh8n7xwtk" path="res://custom_resources/powerups/dash.gd" id="1_vvcum"]
 

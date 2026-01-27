@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://dt0ylonok05yv"]
+[gd_scene format=3 uid="uid://dt0ylonok05yv"]
 
 [ext_resource type="Script" uid="uid://b8mvp2a3c1v8x" path="res://scripts/pickup.gd" id="1_7cqbe"]
 [ext_resource type="Texture2D" uid="uid://cl33xumvcorvl" path="res://assets/sprites/coin_greyscale.png" id="2_7cqbe"]
@@ -98,16 +98,16 @@ animations = [{
 [sub_resource type="CircleShape2D" id="CircleShape2D_pg2rt"]
 radius = 5.0
 
-[node name="Pickup" type="Area2D"]
+[node name="Pickup" type="Area2D" unique_id=784839090]
 collision_mask = 2
 script = ExtResource("1_7cqbe")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=2009836900]
 sprite_frames = SubResource("SpriteFrames_bn2m8")
 autoplay = "default"
 frame_progress = 0.38397676
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=87712711]
 shape = SubResource("CircleShape2D_pg2rt")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
