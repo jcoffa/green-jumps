@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://0xjv5ebotqr2"
+path="res://.godot/imported/Pretty Fly (For a Little Guy).mp3-a1f7878f9b24f8b3684f5700baa4222b.mp3str"
+
+[deps]
+
+source_file="res://assets/music/Pretty Fly (For a Little Guy).mp3"
+dest_files=["res://.godot/imported/Pretty Fly (For a Little Guy).mp3-a1f7878f9b24f8b3684f5700baa4222b.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
