@@ -20,6 +20,8 @@ func update_visuals() -> void:
 		return
 	if powerup:
 		animated_sprite.self_modulate = powerup.color
+	else:
+		animated_sprite.self_modulate = Color.WHITE
 
 
 func _get_configuration_warnings() -> PackedStringArray:

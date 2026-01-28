@@ -1,9 +1,7 @@
 class_name Player
 extends CharacterBody2D
 
-const MAX_POWERUPS := 3
-
-var powerups: Array[Powerup] = []
+var _powerups: Array[Powerup] = []
 
 @export var move_speed := 130.0
 
@@ -13,7 +11,7 @@ var powerups: Array[Powerup] = []
 @export_range(0.01, 10.0, 0.01) var jump_time_to_peak: float = 0.5
 @export_range(0.01, 10.0, 0.01) var jump_time_to_descent: float = 0.4
 @export_group("Dashing")
-@export_range(1.0, 10000.0, 10.0) var dash_speed: float = 700.0
+@export_range(1.0, 2000.0, 10.0) var dash_speed: float = 700.0
 
 var is_dashing: bool = false
 
@@ -88,21 +86,23 @@ func dash():
 
 
 func add_powerup(powerup: Powerup) -> void:
-	var num_powerups = len(powerups)
-	assert(num_powerups <= MAX_POWERUPS,
-			"Number of powerups exceeds the limit of %s; is %s" % [MAX_POWERUPS, num_powerups])
+	var num_powerups = _powerups.size()
+	assert(num_powerups <= Constants.MAX_POWERUPS,
+			"Number of powerups exceeds the limit of %s; is %s" % [Constants.MAX_POWERUPS, num_powerups])
 
-	if num_powerups < MAX_POWERUPS:
-		powerups.push_back(powerup)
-		print("Gain ", powerup, "\t", powerups)	# NOTE: remove debug print after adding powerup UI
+	if num_powerups < Constants.MAX_POWERUPS:
+		_powerups.push_back(powerup)
+		EventBus.powerup_gained.emit(powerup)
+		print("Gain ", powerup, "\t", _powerups)	# NOTE: remove debug print after adding powerup UI
 	else:
 		powerup.activate(self)
-		print("Force ", powerup, "\t", powerups)	# NOTE: remove debug print after adding powerup UI
+		print("Force ", powerup, "\t", _powerups)	# NOTE: remove debug print after adding powerup UI
 
 
 func use_powerup() -> void:
-	if powerups.is_empty():
+	if _powerups.is_empty():
 		return
-	var powerup = powerups.pop_front()
-	print("Use ", powerup, "\t", powerups)	# NOTE: remove debug print after adding powerup UI
+	var powerup = _powerups.pop_front()
+	print("Use ", powerup, "\t", _powerups)	# NOTE: remove debug print after adding powerup UI
 	powerup.activate(self)
+	EventBus.powerup_used.emit(powerup)

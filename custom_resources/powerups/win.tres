@@ -1,9 +1,11 @@
 [gd_resource type="Resource" script_class="Win" format=3 uid="uid://duemd85d7d4na"]
 
 [ext_resource type="Script" uid="uid://bjxgyf1kt2fb5" path="res://custom_resources/powerups/win.gd" id="1_7vvvv"]
+[ext_resource type="Texture2D" uid="uid://yn11yp7rbfok" path="res://assets/sprites/Win Icon.png" id="1_71mu5"]
 
 [resource]
 script = ExtResource("1_7vvvv")
 id = "Win"
 color = Color(1, 1, 0, 1)
+image = ExtResource("1_71mu5")
 metadata/_custom_type_script = "uid://beglgepc4pwam"

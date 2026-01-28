@@ -1,9 +1,11 @@
 [gd_resource type="Resource" script_class="Jump" format=3 uid="uid://6iispixm8kfq"]
 
 [ext_resource type="Script" uid="uid://cdc5awx84mt0t" path="res://custom_resources/powerups/jump.gd" id="1_1yhlj"]
+[ext_resource type="Texture2D" uid="uid://c8p8s3r3pcpff" path="res://assets/sprites/Jump Icon.png" id="1_gbr7a"]
 
 [resource]
 script = ExtResource("1_1yhlj")
 id = "Jump"
 color = Color(0, 1, 0, 1)
+image = ExtResource("1_gbr7a")
 metadata/_custom_type_script = "uid://beglgepc4pwam"

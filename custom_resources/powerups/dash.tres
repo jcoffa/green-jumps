@@ -1,9 +1,11 @@
 [gd_resource type="Resource" script_class="Dash" format=3 uid="uid://duhbvaogicnxn"]
 
+[ext_resource type="Texture2D" uid="uid://d2dfr6n0n0xwu" path="res://assets/sprites/Dash Icon.png" id="1_18xa2"]
 [ext_resource type="Script" uid="uid://f5qh8n7xwtk" path="res://custom_resources/powerups/dash.gd" id="1_vvcum"]
 
 [resource]
 script = ExtResource("1_vvcum")
 id = "Dash"
 color = Color(0, 0.33333334, 1, 1)
+image = ExtResource("1_18xa2")
 metadata/_custom_type_script = "uid://beglgepc4pwam"

@@ -8,6 +8,7 @@
 [ext_resource type="Resource" uid="uid://6iispixm8kfq" path="res://custom_resources/powerups/jump.tres" id="6_gee14"]
 [ext_resource type="Resource" uid="uid://duhbvaogicnxn" path="res://custom_resources/powerups/dash.tres" id="7_gee14"]
 [ext_resource type="Resource" uid="uid://duemd85d7d4na" path="res://custom_resources/powerups/win.tres" id="8_gee14"]
+[ext_resource type="PackedScene" uid="uid://s48vh2xsmc8y" path="res://user_interface/powerup_ui_container.tscn" id="9_0tnpc"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_iywne"]
 
@@ -1389,11 +1390,9 @@ position = Vector2(17, 69)
 
 [node name="Camera2D" type="Camera2D" parent="Player" unique_id=28646975]
 zoom = Vector2(3, 3)
-limit_left = -10000001
-limit_right = 9999999
 limit_bottom = 160
 limit_smoothed = true
-position_smoothing_enabled = true
+position_smoothing_speed = 2.0
 
 [node name="Killzone" parent="." unique_id=760165552 instance=ExtResource("4_lbhrr")]
 position = Vector2(0, 200)
@@ -1430,3 +1429,11 @@ powerup = ExtResource("7_gee14")
 [node name="Pickup4" parent="." unique_id=1664666669 instance=ExtResource("5_u5sy4")]
 position = Vector2(272, 113)
 powerup = ExtResource("8_gee14")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1486555989]
+
+[node name="PowerupUIContainer" parent="CanvasLayer" unique_id=975877167 instance=ExtResource("9_0tnpc")]
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+grow_vertical = 0

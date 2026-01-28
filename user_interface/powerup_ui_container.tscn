@@ -1,0 +1,41 @@
+[gd_scene format=3 uid="uid://s48vh2xsmc8y"]
+
+[ext_resource type="Script" uid="uid://bs2ao2wfe4o7" path="res://user_interface/powerup_ui_container.gd" id="1_r648f"]
+[ext_resource type="PackedScene" uid="uid://oaupitydrmtk" path="res://user_interface/powerup_ui.tscn" id="2_q3ojk"]
+
+[node name="PowerupUIContainer" type="Control" unique_id=975877167]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_r648f")
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=1017904827]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -64.0
+offset_right = 200.0
+grow_vertical = 0
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 16
+theme_override_constants/margin_bottom = 16
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer" unique_id=1060998860]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="PowerupUI" parent="MarginContainer/HBoxContainer" unique_id=496474678 instance=ExtResource("2_q3ojk")]
+layout_mode = 2
+
+[node name="PowerupUI2" parent="MarginContainer/HBoxContainer" unique_id=1682675175 instance=ExtResource("2_q3ojk")]
+layout_mode = 2
+
+[node name="PowerupUI3" parent="MarginContainer/HBoxContainer" unique_id=579198617 instance=ExtResource("2_q3ojk")]
+layout_mode = 2
+
+[node name="PowerupUI4" parent="MarginContainer/HBoxContainer" unique_id=1063710445 instance=ExtResource("2_q3ojk")]
+layout_mode = 2
+
+[node name="PowerupUI5" parent="MarginContainer/HBoxContainer" unique_id=1636202760 instance=ExtResource("2_q3ojk")]
+layout_mode = 2
