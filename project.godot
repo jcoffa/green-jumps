@@ -19,6 +19,8 @@ config/icon="res://icon.svg"
 
 Constants="*uid://dgi6e1hmw7o5s"
 EventBus="*uid://mq3kg27ps2fa"
+MusicPlayer="*uid://132ji3slu50r"
+SfxPlayer="*uid://bmd4d2caiw0dt"
 
 [display]
 

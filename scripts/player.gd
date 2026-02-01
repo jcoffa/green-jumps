@@ -1,6 +1,9 @@
 class_name Player
 extends CharacterBody2D
 
+const JUMP_SOUND: AudioStream = preload("uid://c70hcbq5jh8kc")
+const DASH_SOUND: AudioStream = preload("uid://caftjw0hndhwg")
+
 var _powerups: Array[Powerup] = []
 
 @export var move_speed := 130.0
@@ -71,6 +74,7 @@ func _get_gravity() -> float:
 # TODO: add cloud particle effect when jumping in the air
 # TODO: add coyote time to jump?
 func jump():
+	SfxPlayer.play(JUMP_SOUND)
 	velocity.y = jump_velocity
 
 
@@ -79,6 +83,7 @@ func jump():
 #	scale by a small amount every frame. Is there a way to do this so that we always
 #	squish in the direction of the dash?
 func dash():
+	SfxPlayer.play(DASH_SOUND)
 	var direction = -1 if animated_sprite.flip_h else 1
 	velocity = Vector2(direction * dash_speed, 0)
 	is_dashing = true

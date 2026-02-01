@@ -2,6 +2,8 @@
 class_name Pickup
 extends Area2D
 
+const PICKUP_SOUND: AudioStream = preload("uid://dr2xxqqgda1uc")
+
 @export var powerup: Powerup:
 	set(value):
 		powerup = value
@@ -35,5 +37,6 @@ func _on_body_entered(body: Node2D) -> void:
 	var player := body as Player
 	if not player:
 		return
+	SfxPlayer.play(PICKUP_SOUND)
 	player.add_powerup(powerup)
 	queue_free()
