@@ -17,6 +17,14 @@ func _ready() -> void:
 	SfxPlayer.stop()
 	MusicPlayer.play(LEVEL_MUSIC, true)
 
+	# Connect level win signal
+	EventBus.level_goal_reached.connect(func():
+		# TODO handle winning a level better
+		print("You win!")
+		await get_tree().create_timer(3.0).timeout
+		get_tree().quit()
+	)
+
 	# Add player to scene
 	var player: Player = PLAYER_SCENE.instantiate()
 	player.global_position = player_spawn.global_position

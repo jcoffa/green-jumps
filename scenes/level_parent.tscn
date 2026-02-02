@@ -4,6 +4,7 @@
 [ext_resource type="TileSet" uid="uid://cmvh0wonvdala" path="res://tile_set.tres" id="1_w7c3h"]
 [ext_resource type="PackedScene" uid="uid://dyr2cfy1oky2m" path="res://scenes/killzone.tscn" id="3_mx8sn"]
 [ext_resource type="PackedScene" uid="uid://dhs4d263pp1ak" path="res://user_interface/game_ui.tscn" id="3_w8frs"]
+[ext_resource type="PackedScene" uid="uid://d3ok4ks5wpafs" path="res://scenes/level_goal.tscn" id="5_dxsyt"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_mx8sn"]
 
@@ -41,3 +42,7 @@ shape = SubResource("WorldBoundaryShape2D_mx8sn")
 
 [node name="PlayerSpawn" type="Marker2D" parent="." unique_id=1965159773]
 position = Vector2(64, 836)
+
+[node name="LevelGoal" parent="." unique_id=256670110 instance=ExtResource("5_dxsyt")]
+z_index = -1
+position = Vector2(384, 864)

@@ -1,0 +1,27 @@
+[gd_scene format=3 uid="uid://d3ok4ks5wpafs"]
+
+[ext_resource type="Script" uid="uid://digi0a63852qy" path="res://scenes/level_goal.gd" id="1_dpp3b"]
+[ext_resource type="Texture2D" uid="uid://cyf705376ok3m" path="res://assets/sprites/monochrome_tilemap_transparent_packed.png" id="1_g75lt"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_g75lt"]
+size = Vector2(6, 24)
+
+[node name="LevelGoal" type="Node2D" unique_id=256670110]
+script = ExtResource("1_dpp3b")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=377554588]
+self_modulate = Color(1, 1, 0, 1)
+texture = ExtResource("1_g75lt")
+offset = Vector2(0, -16)
+region_enabled = true
+region_rect = Rect2(96, 144, 16, 32)
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1885220224]
+collision_layer = 4
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=2036914015]
+position = Vector2(0, -12)
+shape = SubResource("RectangleShape2D_g75lt")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
