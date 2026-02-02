@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Green Jumps"
-run/main_scene="uid://bpba5h7qo403v"
+run/main_scene="uid://crtwsgkig2knr"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://icon.svg"
 

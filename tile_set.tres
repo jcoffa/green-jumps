@@ -1,20 +1,10 @@
-[gd_scene format=4 uid="uid://bpba5h7qo403v"]
+[gd_resource type="TileSet" format=3 uid="uid://cmvh0wonvdala"]
 
-[ext_resource type="PackedScene" uid="uid://cg8cr5s14uh4m" path="res://scenes/player.tscn" id="1_uwrxv"]
-[ext_resource type="Texture2D" uid="uid://cyf705376ok3m" path="res://assets/sprites/monochrome_tilemap_transparent_packed.png" id="3_lnu2h"]
-[ext_resource type="PackedScene" uid="uid://dyr2cfy1oky2m" path="res://scenes/killzone.tscn" id="4_lbhrr"]
-[ext_resource type="Texture2D" uid="uid://b00c0fjhvui6l" path="res://assets/sprites/measuring_background.png" id="4_p57ef"]
-[ext_resource type="PackedScene" uid="uid://dt0ylonok05yv" path="res://scenes/pickup.tscn" id="5_u5sy4"]
-[ext_resource type="Resource" uid="uid://6iispixm8kfq" path="res://custom_resources/powerups/jump.tres" id="6_gee14"]
-[ext_resource type="Resource" uid="uid://duhbvaogicnxn" path="res://custom_resources/powerups/dash.tres" id="7_gee14"]
-[ext_resource type="Resource" uid="uid://duemd85d7d4na" path="res://custom_resources/powerups/win.tres" id="8_gee14"]
-[ext_resource type="PackedScene" uid="uid://s48vh2xsmc8y" path="res://user_interface/powerup_ui_container.tscn" id="9_0tnpc"]
-
-[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_iywne"]
+[ext_resource type="Texture2D" uid="uid://cyf705376ok3m" path="res://assets/sprites/monochrome_tilemap_transparent_packed.png" id="1_kfwk1"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_lbhrr"]
 resource_name = "Monochrome Tilemap"
-texture = ExtResource("3_lnu2h")
+texture = ExtResource("1_kfwk1")
 1:0/0 = 0
 2:0/0 = 0
 3:0/0 = 0
@@ -1362,7 +1352,7 @@ texture = ExtResource("3_lnu2h")
 16:6/0/terrains_peering_bit/top_side = 3
 16:6/0/terrains_peering_bit/top_right_corner = 3
 
-[sub_resource type="TileSet" id="TileSet_iywne"]
+[resource]
 physics_layer_0/collision_layer = 1
 terrain_set_0/mode = 0
 terrain_set_0/terrain_0/name = "Metal Blocks"
@@ -1382,58 +1372,3 @@ terrain_set_0/terrain_6/color = Color(0.25, 0.5, 0.40625, 1)
 terrain_set_0/terrain_7/name = "Grass (Clean)"
 terrain_set_0/terrain_7/color = Color(0.25, 0.5, 0.5, 1)
 sources/0 = SubResource("TileSetAtlasSource_lbhrr")
-
-[node name="Game" type="Node2D" unique_id=447309482]
-
-[node name="Player" parent="." unique_id=342522236 instance=ExtResource("1_uwrxv")]
-position = Vector2(17, 69)
-
-[node name="Camera2D" type="Camera2D" parent="Player" unique_id=28646975]
-zoom = Vector2(3, 3)
-limit_bottom = 160
-limit_smoothed = true
-position_smoothing_speed = 2.0
-
-[node name="Killzone" parent="." unique_id=760165552 instance=ExtResource("4_lbhrr")]
-position = Vector2(0, 200)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Killzone" unique_id=745221147]
-shape = SubResource("WorldBoundaryShape2D_iywne")
-
-[node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=1326680887]
-tile_map_data = PackedByteArray("AAD2/wgAAAAPABEAAAD3/wgAAAAPABEAAAD4/wgAAAAPABEAAAD5/wgAAAAPABEAAAD6/wgAAAAPABEAAAD7/wgAAAAPABEAAAD8/wgAAAAPABEAAAD9/wgAAAAPABEAAAD+/wgAAAAPABEAAAD//wgAAAAPABEAAAD//wkAAAAPABMAAAAAAAkAAAAPABMAAAABAAkAAAAPABMAAAACAAkAAAAPABMAAAADAAkAAAAPABMAAAAEAAkAAAAPABMAAAAFAAkAAAAPABMAAAAGAAkAAAAPABMAAAAHAAkAAAAPABMAAAAIAAkAAAAPABMAAAAJAAkAAAAQABMAAAAJAAgAAAAQABIAAAAIAAgAAAAPABIAAAAHAAgAAAAPABEAAAAGAAgAAAAPABEAAAAFAAgAAAAPABEAAAAEAAgAAAAPABEAAAADAAgAAAAPABEAAAACAAgAAAAPABEAAAABAAgAAAAPABEAAAAAAAgAAAAPABEAAAD+/wkAAAAPABMAAAD9/wkAAAAPABMAAAD8/wkAAAAPABMAAAD7/wkAAAAPABMAAAD6/wkAAAAPABMAAAD5/wkAAAAPABMAAAD4/wkAAAAPABMAAAD3/wkAAAAPABMAAAD2/wkAAAAPABMAAAD1/wkAAAAPABMAAAD1/wgAAAAPABEAAAD0/wkAAAAPABMAAAD0/wgAAAAPABEAAADz/wkAAAAPABMAAADz/wgAAAAPABEAAADy/wkAAAAPABMAAADy/wgAAAAPABEAAADx/wkAAAAPABMAAADx/wgAAAAPABEAAADw/wkAAAAPABMAAADw/wgAAAAPABEAAADv/wkAAAAPABMAAADv/wgAAAAPABEAAADu/wkAAAAOABMAAADu/wgAAAAOABEAAAAJAAcAAAAQABIAAAAJAAYAAAAQABIAAAAJAAUAAAAQABIAAAAJAAQAAAAQABIAAAAJAAMAAAAQABIAAAAJAAIAAAAQABEAAAAIAAcAAAAOABIAAAAIAAYAAAAOABIAAAAIAAUAAAAOABIAAAAIAAQAAAAOABIAAAAIAAMAAAAOABIAAAAIAAIAAAAOABEAAAASAAQAAAAQABMAAAASAAMAAAAQABIAAAASAAIAAAAQABIAAAARAAQAAAAPABMAAAARAAMAAAAPABIAAAARAAIAAAAPABIAAAAQAAQAAAAPABMAAAAQAAMAAAAPABIAAAAQAAIAAAAPABIAAAAPAAQAAAAPABMAAAAPAAMAAAAPABIAAAAPAAIAAAAPABIAAAAOAAQAAAAPABMAAAAOAAMAAAAPABIAAAAOAAIAAAAPABIAAAANAAQAAAAPABMAAAANAAMAAAAPABIAAAANAAIAAAAPABIAAAASAAEAAAAQABIAAAASAAAAAAAQABIAAAASAP//AAAQABIAAAASAP7/AAAQABIAAAASAP3/AAAQABIAAAASAPz/AAAQABEAAAARAAEAAAAPABIAAAARAAAAAAAPABIAAAARAP//AAAPABIAAAARAP7/AAAPABIAAAARAP3/AAAPABIAAAARAPz/AAAPABEAAAAQAAEAAAAPABIAAAAQAAAAAAAPABIAAAAQAP//AAAPABIAAAAQAP7/AAAPABIAAAAQAP3/AAAPABIAAAAQAPz/AAAPABEAAAAPAAEAAAAPABIAAAAPAAAAAAAPABIAAAAPAP//AAAPABIAAAAPAP7/AAAPABIAAAAPAP3/AAAPABIAAAAPAPz/AAAPABEAAAAOAAEAAAAPABIAAAAOAAAAAAAPABIAAAAOAP//AAAPABIAAAAOAP7/AAAPABIAAAAOAP3/AAAPABIAAAAOAPz/AAAPABEAAAANAAEAAAAPABIAAAANAAAAAAAPABIAAAANAP//AAAPABIAAAANAP7/AAAPABIAAAANAP3/AAAPABIAAAANAPz/AAAPABEAAAASAAkAAAAQABMAAAASAAgAAAAQABEAAAARAAkAAAAPABMAAAARAAgAAAAPABEAAAAQAAkAAAAPABMAAAAQAAgAAAAPABEAAAAPAAkAAAAOABMAAAAPAAgAAAAOABEAAAAMAAQAAAAOABMAAAAMAAMAAAAOABIAAAAMAAIAAAAOABIAAAAMAAEAAAAOABIAAAAMAAAAAAAOABIAAAAMAP//AAAOABIAAAAMAP7/AAAOABIAAAAMAP3/AAAOABIAAAAMAPz/AAAOABEAAAA=")
-tile_set = SubResource("TileSet_iywne")
-
-[node name="MeasuringBackground" type="Sprite2D" parent="." unique_id=2066142998]
-position = Vector2(0, 16)
-texture = ExtResource("4_p57ef")
-
-[node name="MeasuringBackground2" type="Sprite2D" parent="." unique_id=1096290651]
-position = Vector2(-171, 106)
-rotation = -1.5707964
-texture = ExtResource("4_p57ef")
-flip_h = true
-
-[node name="Pickup" parent="." unique_id=109588676 instance=ExtResource("5_u5sy4")]
-position = Vector2(61, 115)
-powerup = ExtResource("6_gee14")
-
-[node name="Pickup2" parent="." unique_id=739092047 instance=ExtResource("5_u5sy4")]
-position = Vector2(80, 117)
-powerup = ExtResource("6_gee14")
-
-[node name="Pickup3" parent="." unique_id=533295460 instance=ExtResource("5_u5sy4")]
-position = Vector2(101, 116)
-powerup = ExtResource("7_gee14")
-
-[node name="Pickup4" parent="." unique_id=1664666669 instance=ExtResource("5_u5sy4")]
-position = Vector2(272, 113)
-powerup = ExtResource("8_gee14")
-
-[node name="UI" type="CanvasLayer" parent="." unique_id=1486555989]
-
-[node name="PowerupUIContainer" parent="UI" unique_id=975877167 instance=ExtResource("9_0tnpc")]
-anchors_preset = 2
-anchor_top = 1.0
-anchor_bottom = 1.0
-grow_vertical = 0

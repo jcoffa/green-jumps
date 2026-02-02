@@ -76,6 +76,14 @@ autoplay = "idle"
 position = Vector2(0, -5)
 shape = SubResource("RectangleShape2D_fjrip")
 
+[node name="Camera2D" type="Camera2D" parent="." unique_id=614972133]
+zoom = Vector2(3, 3)
+limit_left = 0
+limit_top = 0
+limit_bottom = 900
+limit_smoothed = true
+position_smoothing_speed = 2.0
+
 [node name="DashTimer" type="Timer" parent="." unique_id=457229058]
 wait_time = 0.15
 one_shot = true

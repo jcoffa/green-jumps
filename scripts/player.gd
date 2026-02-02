@@ -98,16 +98,13 @@ func add_powerup(powerup: Powerup) -> void:
 	if num_powerups < Constants.MAX_POWERUPS:
 		_powerups.push_back(powerup)
 		EventBus.powerup_gained.emit(powerup)
-		print("Gain ", powerup, "\t", _powerups)	# NOTE: remove debug print after adding powerup UI
 	else:
 		powerup.activate(self)
-		print("Force ", powerup, "\t", _powerups)	# NOTE: remove debug print after adding powerup UI
 
 
 func use_powerup() -> void:
 	if _powerups.is_empty():
 		return
 	var powerup = _powerups.pop_front()
-	print("Use ", powerup, "\t", _powerups)	# NOTE: remove debug print after adding powerup UI
 	powerup.activate(self)
 	EventBus.powerup_used.emit(powerup)
