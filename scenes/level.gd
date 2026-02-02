@@ -4,8 +4,9 @@ extends Node
 const PLAYER_SCENE: PackedScene = preload("uid://cg8cr5s14uh4m")
 const LEVEL_MUSIC: AudioStream = preload("uid://0xjv5ebotqr2")
 
-@onready var player_spawn: Marker2D = $PlayerSpawn
 @onready var game_ui: CanvasLayer = $GameUI
+@onready var player_spawn: Marker2D = $PlayerSpawn
+@onready var camera_limit: Marker2D = $CameraLimit
 
 
 func _ready() -> void:
@@ -29,3 +30,8 @@ func _ready() -> void:
 	var player: Player = PLAYER_SCENE.instantiate()
 	player.global_position = player_spawn.global_position
 	add_child(player)
+
+	# Change camera limits if needed
+	var camera_limit_dimensions = camera_limit.global_position
+	if camera_limit_dimensions != Vector2.ZERO:	# Don't change if the level hasn't moved the anchor
+		player.set_camera_limits(camera_limit_dimensions.x, camera_limit_dimensions.y)

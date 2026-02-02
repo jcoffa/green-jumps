@@ -43,6 +43,8 @@ shape = SubResource("WorldBoundaryShape2D_mx8sn")
 [node name="PlayerSpawn" type="Marker2D" parent="." unique_id=1965159773]
 position = Vector2(64, 836)
 
+[node name="CameraLimit" type="Marker2D" parent="." unique_id=715383170]
+
 [node name="LevelGoal" parent="." unique_id=256670110 instance=ExtResource("5_dxsyt")]
 z_index = -1
 position = Vector2(384, 864)

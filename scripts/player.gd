@@ -19,6 +19,7 @@ var _powerups: Array[Powerup] = []
 var is_dashing: bool = false
 
 @onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
+@onready var camera_2d: Camera2D = $Camera2D
 @onready var dash_timer: Timer = $DashTimer
 
 @onready var jump_velocity: float = ((2.0 * jump_height) / jump_time_to_peak) * -1.0
@@ -69,6 +70,17 @@ func _physics_process(delta: float) -> void:
 
 func _get_gravity() -> float:
 	return jump_gravity if velocity.y < 0.0 else fall_gravity
+
+
+func set_camera_limits(limit_right: float, limit_top: float) -> void:
+	var viewport := get_viewport().get_visible_rect().size
+	var minimum := Vector2(
+		ceil(viewport.x / camera_2d.zoom.x),
+		# I do not understand why we need to double the Y to get the right number, but it works!
+		ceil(viewport.y / camera_2d.zoom.y) * 2
+	)
+	camera_2d.limit_right = max(limit_right, minimum.x)
+	camera_2d.limit_top = min(limit_top, minimum.y)	# min() because small values of Y is higher ("-Y is up")
 
 
 # TODO: add cloud particle effect when jumping in the air
