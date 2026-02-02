@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://dhs4d263pp1ak"]
 
 [ext_resource type="PackedScene" uid="uid://s48vh2xsmc8y" path="res://user_interface/powerup_ui_container.tscn" id="1_7hy40"]
+[ext_resource type="PackedScene" uid="uid://sa65nnxfcl4y" path="res://user_interface/restart_level_timer.tscn" id="2_m18y4"]
 
 [node name="GameUI" type="CanvasLayer" unique_id=78439775]
 
@@ -9,3 +10,10 @@ anchors_preset = 2
 anchor_top = 1.0
 anchor_bottom = 1.0
 grow_vertical = 0
+
+[node name="RestartLevelTimer" parent="." unique_id=1811638574 instance=ExtResource("2_m18y4")]
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+grow_horizontal = 1
+grow_vertical = 1

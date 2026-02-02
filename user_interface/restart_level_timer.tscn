@@ -1,0 +1,69 @@
+[gd_scene format=3 uid="uid://sa65nnxfcl4y"]
+
+[ext_resource type="Script" uid="uid://duk5pyhjmqae3" path="res://user_interface/restart_level_timer.gd" id="1_h4jxi"]
+[ext_resource type="Texture2D" uid="uid://def07x6dsjw7s" path="res://assets/sprites/Circle_64.png" id="2_hg2qg"]
+[ext_resource type="FontFile" uid="uid://bxpfu70psooq6" path="res://assets/fonts/Kenney Blocks.ttf" id="3_g5mkk"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_g5mkk"]
+bg_color = Color(0, 0, 0, 0.6666667)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(1, 1, 1, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_lmax8"]
+font = ExtResource("3_g5mkk")
+
+[node name="RestartLevelTimer" type="Control" unique_id=1811638574]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_h4jxi")
+
+[node name="Timer" type="Timer" parent="." unique_id=1077954660]
+wait_time = 3.0
+one_shot = true
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=497420475]
+layout_mode = 0
+offset_right = 256.0
+offset_bottom = 203.0
+theme_override_constants/margin_left = 24
+theme_override_constants/margin_top = 24
+theme_override_constants/margin_right = 24
+theme_override_constants/margin_bottom = 24
+
+[node name="PanelContainer" type="PanelContainer" parent="MarginContainer" unique_id=1067637774]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_g5mkk")
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/PanelContainer" unique_id=1117314041]
+layout_mode = 2
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 16
+theme_override_constants/margin_bottom = 16
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/PanelContainer/MarginContainer" unique_id=1973354305]
+layout_mode = 2
+
+[node name="CenterContainer" type="CenterContainer" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer" unique_id=294074597]
+layout_mode = 2
+
+[node name="TextureProgressBar" type="TextureProgressBar" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/CenterContainer" unique_id=1000821691]
+unique_name_in_owner = true
+layout_mode = 2
+max_value = 3.0
+step = 0.1
+fill_mode = 4
+texture_progress = ExtResource("2_hg2qg")
+
+[node name="Label" type="Label" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer" unique_id=191424067]
+layout_mode = 2
+text = "Hold \"R\" to
+restart level..."
+label_settings = SubResource("LabelSettings_lmax8")
