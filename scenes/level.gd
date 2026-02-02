@@ -22,7 +22,7 @@ func _ready() -> void:
 	EventBus.level_goal_reached.connect(func():
 		# TODO handle winning a level better
 		print("You win!")
-		await get_tree().create_timer(3.0).timeout
+		await get_tree().create_timer(2.0).timeout
 		get_tree().quit()
 	)
 

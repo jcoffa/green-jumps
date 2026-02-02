@@ -6,17 +6,25 @@
 script = ExtResource("1_pv6f2")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=2093419052]
+bus = &"SFX"
 
 [node name="AudioStreamPlayer2" type="AudioStreamPlayer" parent="." unique_id=265106630]
+bus = &"SFX"
 
 [node name="AudioStreamPlayer3" type="AudioStreamPlayer" parent="." unique_id=1881871785]
+bus = &"SFX"
 
 [node name="AudioStreamPlayer4" type="AudioStreamPlayer" parent="." unique_id=655094433]
+bus = &"SFX"
 
 [node name="AudioStreamPlayer5" type="AudioStreamPlayer" parent="." unique_id=427453927]
+bus = &"SFX"
 
 [node name="AudioStreamPlayer6" type="AudioStreamPlayer" parent="." unique_id=1230797927]
+bus = &"SFX"
 
 [node name="AudioStreamPlayer7" type="AudioStreamPlayer" parent="." unique_id=296892519]
+bus = &"SFX"
 
 [node name="AudioStreamPlayer8" type="AudioStreamPlayer" parent="." unique_id=2121339576]
+bus = &"SFX"
