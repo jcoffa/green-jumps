@@ -2,6 +2,11 @@
 
 [ext_resource type="Script" uid="uid://c0g0lnsjj0bhj" path="res://scripts/player.gd" id="1_g2els"]
 [ext_resource type="Texture2D" uid="uid://cyf705376ok3m" path="res://assets/sprites/monochrome_tilemap_transparent_packed.png" id="2_g2els"]
+[ext_resource type="Texture2D" uid="uid://oq111m8u236d" path="res://assets/sprites/Hurt Icon.png" id="3_qhqgy"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g2els"]
+atlas = ExtResource("2_g2els")
+region = Rect2(96, 224, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_qhqgy"]
 atlas = ExtResource("2_g2els")
@@ -25,6 +30,14 @@ region = Rect2(16, 224, 16, 16)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_tuyoq"]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_g2els")
+}],
+"loop": true,
+"name": &"die",
+"speed": 5.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_qhqgy")
@@ -59,6 +72,43 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fjrip"]
 size = Vector2(8, 10)
 
+[sub_resource type="Gradient" id="Gradient_dqkch"]
+offsets = PackedFloat32Array(0, 0.65217394, 0.9391304)
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_qlg0r"]
+gradient = SubResource("Gradient_dqkch")
+
+[sub_resource type="Curve" id="Curve_tuyoq"]
+_limits = [-1.0, 1.0, 0.0, 1.0]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.49999994, 1), 0.0, 0.0, 0, 0, Vector2(1, -1), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CurveTexture" id="CurveTexture_fjrip"]
+curve = SubResource("Curve_tuyoq")
+
+[sub_resource type="Curve" id="Curve_smehm"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.5039062, 1), 0.0, 0.0, 0, 0, Vector2(1, 0.1861614), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CurveTexture" id="CurveTexture_ur7pv"]
+curve = SubResource("Curve_smehm")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_y4r1p"]
+particle_flag_disable_z = true
+direction = Vector3(0, -1, 0)
+spread = 60.0
+initial_velocity_min = 20.0
+initial_velocity_max = 30.0
+gravity = Vector3(0, 0, 0)
+linear_accel_min = -5.000002
+linear_accel_max = 4.9999976
+linear_accel_curve = SubResource("CurveTexture_fjrip")
+scale_min = 0.099999994
+scale_max = 0.099999994
+scale_curve = SubResource("CurveTexture_ur7pv")
+color_ramp = SubResource("GradientTexture1D_qlg0r")
+
 [node name="Player" type="CharacterBody2D" unique_id=97486602]
 collision_layer = 2
 script = ExtResource("1_g2els")
@@ -83,6 +133,19 @@ limit_top = 0
 limit_bottom = 900
 position_smoothing_speed = 2.0
 
+[node name="DeathParticles" type="GPUParticles2D" parent="." unique_id=1166329600]
+emitting = false
+amount = 5
+texture = ExtResource("3_qhqgy")
+lifetime = 2.0
+one_shot = true
+explosiveness = 1.0
+process_material = SubResource("ParticleProcessMaterial_y4r1p")
+
 [node name="DashTimer" type="Timer" parent="." unique_id=457229058]
 wait_time = 0.15
+one_shot = true
+
+[node name="DeathTimer" type="Timer" parent="." unique_id=1030177285]
+wait_time = 3.0
 one_shot = true

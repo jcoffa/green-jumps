@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Hurt" format=3 uid="uid://bwjoqflnnnc7y"]
+
+[ext_resource type="Texture2D" uid="uid://oq111m8u236d" path="res://assets/sprites/Hurt Icon.png" id="1_g1jxy"]
+[ext_resource type="Script" uid="uid://dkqvbv22mw2y1" path="res://custom_resources/powerups/hurt.gd" id="1_pta3n"]
+
+[resource]
+script = ExtResource("1_pta3n")
+id = "Hurt"
+color = Color(1, 0, 0, 1)
+image = ExtResource("1_g1jxy")
+metadata/_custom_type_script = "uid://dkqvbv22mw2y1"

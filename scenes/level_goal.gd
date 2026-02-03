@@ -21,3 +21,5 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 	particles.emitting = true
 	area_2d.set_deferred("monitoring", false)
 	area_2d.set_deferred("monitorable", false)
+	player.set_physics_process(false)
+	player.animated_sprite.play("idle")

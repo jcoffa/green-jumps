@@ -3,6 +3,8 @@ extends CharacterBody2D
 
 const JUMP_SOUND: AudioStream = preload("uid://c70hcbq5jh8kc")
 const DASH_SOUND: AudioStream = preload("uid://caftjw0hndhwg")
+const DIE_SOUND: AudioStream = preload("uid://bfwxk46idfg5l")
+
 
 var _powerups: Array[Powerup] = []
 
@@ -20,7 +22,9 @@ var is_dashing: bool = false
 
 @onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
 @onready var camera_2d: Camera2D = $Camera2D
+@onready var death_particles: GPUParticles2D = $DeathParticles
 @onready var dash_timer: Timer = $DashTimer
+@onready var death_timer: Timer = $DeathTimer
 
 @onready var jump_velocity: float = ((2.0 * jump_height) / jump_time_to_peak) * -1.0
 @onready var jump_gravity: float = ((-2.0 * jump_height) / (jump_time_to_peak * jump_time_to_peak)) * -1.0
@@ -30,6 +34,8 @@ var is_dashing: bool = false
 func _ready() -> void:
 	dash_timer.one_shot = true
 	dash_timer.timeout.connect(func(): is_dashing = false)
+	death_timer.one_shot = true
+	death_timer.timeout.connect(func(): get_tree().reload_current_scene())
 
 
 func _physics_process(delta: float) -> void:
@@ -100,6 +106,15 @@ func dash():
 	velocity = Vector2(direction * dash_speed, 0)
 	is_dashing = true
 	dash_timer.start()
+
+
+func die():
+	MusicPlayer.stop()
+	SfxPlayer.play(DIE_SOUND)
+	set_physics_process(false)
+	death_timer.start()
+	animated_sprite.play("die")
+	death_particles.emitting = true
 
 
 func add_powerup(powerup: Powerup) -> void:
