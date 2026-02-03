@@ -2,6 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://s48vh2xsmc8y" path="res://user_interface/powerup_ui_container.tscn" id="1_7hy40"]
 [ext_resource type="PackedScene" uid="uid://sa65nnxfcl4y" path="res://user_interface/restart_level_timer.tscn" id="2_m18y4"]
+[ext_resource type="PackedScene" uid="uid://bh1joag076vq8" path="res://user_interface/level_name_display.tscn" id="3_1rvxd"]
 
 [node name="GameUI" type="CanvasLayer" unique_id=78439775]
 
@@ -17,3 +18,5 @@ anchor_right = 0.0
 anchor_bottom = 0.0
 grow_horizontal = 1
 grow_vertical = 1
+
+[node name="LevelNameDisplay" parent="." unique_id=220674444 instance=ExtResource("3_1rvxd")]

@@ -7,6 +7,8 @@ const DIE_SOUND := preload("uid://bfwxk46idfg5l")
 
 
 func _on_body_entered(body: Node2D) -> void:
+	if body is not Player:
+		return
 	print("You died! Loser!")
 	MusicPlayer.stop()
 	SfxPlayer.play(DIE_SOUND)
