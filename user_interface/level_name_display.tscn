@@ -3,6 +3,14 @@
 [ext_resource type="Script" uid="uid://b8xqlhcfmficq" path="res://user_interface/level_name_display.gd" id="1_250kn"]
 [ext_resource type="FontFile" uid="uid://bxpfu70psooq6" path="res://assets/fonts/Kenney Blocks.ttf" id="2_250kn"]
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_250kn"]
+bg_color = Color(0, 0, 0, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(1, 1, 1, 1)
+
 [sub_resource type="Animation" id="Animation_250kn"]
 length = 0.001
 tracks/0/type = "value"
@@ -63,6 +71,7 @@ theme_override_constants/margin_bottom = 24
 
 [node name="PanelContainer" type="PanelContainer" parent="MarginContainer" unique_id=160240647]
 layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_250kn")
 
 [node name="MarginContainer" type="MarginContainer" parent="MarginContainer/PanelContainer" unique_id=881698661]
 layout_mode = 2
