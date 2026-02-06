@@ -21,3 +21,13 @@ func play(stream: AudioStream, single := false) -> void:
 func stop() -> void:
 	for player: AudioStreamPlayer in get_children():
 		player.stop()
+
+
+func is_playing(stream: AudioStream) -> bool:
+	if not stream:
+		return false
+
+	for player: AudioStreamPlayer in get_children():
+		if player.playing and player.stream == stream:
+			return true
+	return false

@@ -2,6 +2,7 @@
 
 [ext_resource type="FontFile" uid="uid://bxpfu70psooq6" path="res://assets/fonts/Kenney Blocks.ttf" id="1_4it3q"]
 [ext_resource type="Script" uid="uid://c5qaw3581loeu" path="res://user_interface/level_select_menu.gd" id="1_6b5ur"]
+[ext_resource type="PackedScene" uid="uid://b7ovokxn6383o" path="res://user_interface/go_to_level_button.tscn" id="3_jdq3x"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_6b5ur"]
 font = ExtResource("1_4it3q")
@@ -87,6 +88,18 @@ layout_mode = 2
 theme_override_constants/h_separation = 16
 theme_override_constants/v_separation = 16
 columns = 4
+
+[node name="GoToLevelButton" parent="VBoxContainer/HBoxContainer/Levels" unique_id=1493882274 instance=ExtResource("3_jdq3x")]
+layout_mode = 2
+
+[node name="GoToLevelButton2" parent="VBoxContainer/HBoxContainer/Levels" unique_id=359951868 instance=ExtResource("3_jdq3x")]
+layout_mode = 2
+
+[node name="GoToLevelButton3" parent="VBoxContainer/HBoxContainer/Levels" unique_id=1539169261 instance=ExtResource("3_jdq3x")]
+layout_mode = 2
+
+[node name="GoToLevelButton4" parent="VBoxContainer/HBoxContainer/Levels" unique_id=1418637815 instance=ExtResource("3_jdq3x")]
+layout_mode = 2
 
 [node name="Filler2" type="Control" parent="VBoxContainer/HBoxContainer" unique_id=74184049]
 layout_mode = 2

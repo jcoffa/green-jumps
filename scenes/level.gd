@@ -3,7 +3,7 @@ extends Node
 
 const LEVEL_TRANSITION_DELAY_SECONDS := 3.0
 const PLAYER_SCENE: PackedScene = preload("uid://cg8cr5s14uh4m")
-const LEVEL_MUSIC: AudioStream = preload("uid://0xjv5ebotqr2")
+const LEVEL_THEME: AudioStream = preload("uid://0xjv5ebotqr2")
 
 @export_range(0, 100) var level_number: int = 0
 @export var level_name: String = "Default Level Name"
@@ -19,12 +19,10 @@ func _ready() -> void:
 	# a level. Always ensure the UI is visible when actually running the scene!
 	game_ui.visible = true
 
-	# Reset sounds
+	# Reset sounds and music if needed
 	SfxPlayer.stop()
-	# FIXME: Make the music start once on first level load and keep playing the whole game.
-	# It's super annoying to have it restart on every level load.
-	# Still need to stop it on death and restart it after resurrecting though!
-	MusicPlayer.play(LEVEL_MUSIC, true)
+	if not MusicPlayer.is_playing(LEVEL_THEME):
+		MusicPlayer.play(LEVEL_THEME, true)
 
 	# Connect level win signal
 	EventBus.level_goal_reached.connect(func():
