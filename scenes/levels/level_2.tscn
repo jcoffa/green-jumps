@@ -37,5 +37,5 @@ offset_right = 277.0
 offset_bottom = 699.0
 theme_override_fonts/font = ExtResource("4_fiq81")
 theme_override_font_sizes/font_size = 8
-text = "(You can hold \"R\"
-to restart a level)"
+text = "You can hold \"R\"
+to restart a level"
