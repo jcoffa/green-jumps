@@ -71,6 +71,7 @@ size_flags_vertical = 3
 layout_mode = 2
 size_flags_horizontal = 4
 bus_name = "Master"
+make_tick_sound = true
 
 [node name="MusicVolumeSlider" parent="VBoxContainer" unique_id=1627675121 instance=ExtResource("3_lxy0p")]
 layout_mode = 2
@@ -81,6 +82,7 @@ bus_name = "Music"
 layout_mode = 2
 size_flags_horizontal = 4
 bus_name = "SFX"
+make_tick_sound = true
 
 [node name="Filler3" type="Control" parent="VBoxContainer" unique_id=1404299121]
 layout_mode = 2

@@ -3,7 +3,6 @@ extends CanvasLayer
 @onready var pause_sound: AudioStreamPlayer = $PauseSound
 @onready var unpause_sound: AudioStreamPlayer = $UnpauseSound
 
-
 func _ready() -> void:
 	hide()
 
