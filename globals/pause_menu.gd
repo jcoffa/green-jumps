@@ -1,16 +1,21 @@
 extends CanvasLayer
 
+@onready var pause_sound: AudioStreamPlayer = $PauseSound
+@onready var unpause_sound: AudioStreamPlayer = $UnpauseSound
+
 
 func _ready() -> void:
 	hide()
 
 
 func pause_game() -> void:
+	pause_sound.play()
 	show()
 	get_tree().paused = true
 
 
 func unpause_game() -> void:
+	unpause_sound.play()
 	hide()
 	get_tree().paused = false
 

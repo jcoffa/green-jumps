@@ -35,7 +35,7 @@ tile_set = ExtResource("1_w7c3h")
 metadata/_edit_lock_ = true
 
 [node name="Killzone" parent="." unique_id=2135191917 instance=ExtResource("3_mx8sn")]
-position = Vector2(0, 900)
+position = Vector2(0, 904)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Killzone" unique_id=1560501021]
 shape = SubResource("WorldBoundaryShape2D_mx8sn")

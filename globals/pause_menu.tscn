@@ -2,6 +2,8 @@
 
 [ext_resource type="Script" uid="uid://vb1y55hgt4gt" path="res://globals/pause_menu.gd" id="1_3al74"]
 [ext_resource type="FontFile" uid="uid://bxpfu70psooq6" path="res://assets/fonts/Kenney Blocks.ttf" id="1_rhd5n"]
+[ext_resource type="AudioStream" uid="uid://dq5ektnku728m" path="res://assets/sounds/pause.wav" id="3_q1l4m"]
+[ext_resource type="AudioStream" uid="uid://dgn0b8ag2wfs5" path="res://assets/sounds/unpause.wav" id="4_lxy0p"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3al74"]
 bg_color = Color(0.13333334, 0.13333334, 0.13333334, 1)
@@ -95,6 +97,16 @@ size_flags_vertical = 3
 [node name="Filler4" type="Control" parent="VBoxContainer" unique_id=912899579]
 layout_mode = 2
 size_flags_vertical = 3
+
+[node name="PauseSound" type="AudioStreamPlayer" parent="." unique_id=1932190765]
+stream = ExtResource("3_q1l4m")
+volume_db = -6.0
+bus = &"SFX"
+
+[node name="UnpauseSound" type="AudioStreamPlayer" parent="." unique_id=1492985917]
+stream = ExtResource("4_lxy0p")
+volume_db = -6.0
+bus = &"SFX"
 
 [connection signal="pressed" from="VBoxContainer/ResumeButton" to="." method="_on_resume_button_pressed"]
 [connection signal="pressed" from="VBoxContainer/QuitButton" to="." method="_on_quit_button_pressed"]
