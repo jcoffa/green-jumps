@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://vb1y55hgt4gt" path="res://globals/pause_menu.gd" id="1_3al74"]
 [ext_resource type="FontFile" uid="uid://bxpfu70psooq6" path="res://assets/fonts/Kenney Blocks.ttf" id="1_rhd5n"]
+[ext_resource type="PackedScene" uid="uid://b0chgmbsedj0o" path="res://user_interface/volume_slider.tscn" id="3_lxy0p"]
 [ext_resource type="AudioStream" uid="uid://dq5ektnku728m" path="res://assets/sounds/pause.wav" id="3_q1l4m"]
 [ext_resource type="AudioStream" uid="uid://dgn0b8ag2wfs5" path="res://assets/sounds/unpause.wav" id="4_lxy0p"]
 
@@ -66,6 +67,25 @@ vertical_alignment = 1
 layout_mode = 2
 size_flags_vertical = 3
 
+[node name="MasterVolumeSlider" parent="VBoxContainer" unique_id=1573932112 instance=ExtResource("3_lxy0p")]
+layout_mode = 2
+size_flags_horizontal = 4
+bus_name = "Master"
+
+[node name="MusicVolumeSlider" parent="VBoxContainer" unique_id=1627675121 instance=ExtResource("3_lxy0p")]
+layout_mode = 2
+size_flags_horizontal = 4
+bus_name = "Music"
+
+[node name="SFXVolumeSlider" parent="VBoxContainer" unique_id=1499152312 instance=ExtResource("3_lxy0p")]
+layout_mode = 2
+size_flags_horizontal = 4
+bus_name = "SFX"
+
+[node name="Filler3" type="Control" parent="VBoxContainer" unique_id=1404299121]
+layout_mode = 2
+size_flags_vertical = 3
+
 [node name="ResumeButton" type="Button" parent="VBoxContainer" unique_id=2047862733]
 custom_minimum_size = Vector2(200, 64)
 layout_mode = 2
@@ -90,11 +110,11 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_t6nv7")
 theme_override_styles/hover = SubResource("StyleBoxFlat_vbv2j")
 text = "Quit"
 
-[node name="Filler3" type="Control" parent="VBoxContainer" unique_id=1404299121]
+[node name="Filler4" type="Control" parent="VBoxContainer" unique_id=912899579]
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="Filler4" type="Control" parent="VBoxContainer" unique_id=912899579]
+[node name="Filler5" type="Control" parent="VBoxContainer" unique_id=1102917969]
 layout_mode = 2
 size_flags_vertical = 3
 
