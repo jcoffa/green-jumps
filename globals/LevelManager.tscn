@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://c5akvnpuuarbo"]
+
+[ext_resource type="Script" uid="uid://c83sg407opt6c" path="res://globals/level_manager.gd" id="1_sbx32"]
+[ext_resource type="PackedScene" uid="uid://cg7sx8lugr7dd" path="res://scenes/levels/level_1.tscn" id="2_ubea5"]
+[ext_resource type="PackedScene" uid="uid://dnlj7hsnie8r7" path="res://scenes/levels/level_2.tscn" id="3_t60sa"]
+[ext_resource type="PackedScene" uid="uid://dywscdu2qe6bm" path="res://scenes/levels/level_3.tscn" id="4_iqt61"]
+[ext_resource type="PackedScene" uid="uid://crtwsgkig2knr" path="res://scenes/levels/level_4.tscn" id="5_beoux"]
+[ext_resource type="PackedScene" uid="uid://bvjditovhld2h" path="res://scenes/levels/level_5.tscn" id="6_07kbm"]
+[ext_resource type="PackedScene" uid="uid://btlq87d5hwfxi" path="res://scenes/levels/level_6.tscn" id="7_f4jvs"]
+
+[node name="LevelManager" type="Node" unique_id=317325850]
+script = ExtResource("1_sbx32")
+levels = Array[PackedScene]([ExtResource("2_ubea5"), ExtResource("3_t60sa"), ExtResource("4_iqt61"), ExtResource("5_beoux"), ExtResource("6_07kbm"), ExtResource("7_f4jvs")])

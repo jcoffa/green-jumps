@@ -4,7 +4,11 @@ extends Node
 const PLAYER_SCENE: PackedScene = preload("uid://cg8cr5s14uh4m")
 const LEVEL_MUSIC: AudioStream = preload("uid://0xjv5ebotqr2")
 
-@onready var game_ui: CanvasLayer = $GameUI
+@export_range(0, 100) var level_number: int = 0
+@export var level_name: String = "Default Level Name"
+@export var name_color: Color = Color.WHITE
+
+@onready var game_ui: GameUI = $GameUI
 @onready var player_spawn: Marker2D = $PlayerSpawn
 @onready var camera_limit: Marker2D = $CameraLimit
 
@@ -25,6 +29,9 @@ func _ready() -> void:
 		await get_tree().create_timer(2.0).timeout
 		get_tree().quit()
 	)
+
+	# Update UI to match the level details
+	game_ui.init_level_ui(level_number, level_name, name_color)
 
 	# Add player to scene
 	var player: Player = PLAYER_SCENE.instantiate()

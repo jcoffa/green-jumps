@@ -6,8 +6,6 @@
 [ext_resource type="FontFile" uid="uid://bxpfu70psooq6" path="res://assets/fonts/Kenney Blocks.ttf" id="4_fiq81"]
 
 [node name="Level2" unique_id=671481730 instance=ExtResource("1_j2425")]
-
-[node name="LevelNameDisplay" parent="GameUI" parent_id_path=PackedInt32Array(78439775) index="2" unique_id=220674444]
 level_number = 2
 level_name = "Air Power"
 
@@ -41,5 +39,3 @@ theme_override_fonts/font = ExtResource("4_fiq81")
 theme_override_font_sizes/font_size = 8
 text = "(You can hold \"R\"
 to restart a level)"
-
-[editable path="GameUI"]

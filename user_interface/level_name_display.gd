@@ -2,6 +2,7 @@
 class_name LevelNameDisplay
 extends Control
 
+@export_group("Debug Level Properties")
 @export_range(0, 100) var level_number: int = 1
 @export var level_name: String = "Green Jumps"
 @export var color: Color = Color.WHITE
