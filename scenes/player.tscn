@@ -130,7 +130,7 @@ shape = SubResource("RectangleShape2D_fjrip")
 zoom = Vector2(3, 3)
 limit_left = 0
 limit_top = 0
-limit_bottom = 900
+limit_bottom = 896
 position_smoothing_speed = 2.0
 
 [node name="DeathParticles" type="GPUParticles2D" parent="." unique_id=1166329600]
