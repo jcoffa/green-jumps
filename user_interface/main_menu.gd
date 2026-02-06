@@ -7,7 +7,8 @@ func _on_play_button_button_up() -> void:
 
 
 func _on_level_select_button_pressed() -> void:
-	print("TODO: Open Level Selector!")
+	# Can't preload due to circular reference
+	get_tree().change_scene_to_file("res://user_interface/level_select_menu.tscn")
 
 
 func _on_quit_button_button_up() -> void:

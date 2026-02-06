@@ -1,0 +1,114 @@
+[gd_scene format=3 uid="uid://ccxd0eknailkh"]
+
+[ext_resource type="FontFile" uid="uid://bxpfu70psooq6" path="res://assets/fonts/Kenney Blocks.ttf" id="1_4it3q"]
+[ext_resource type="Script" uid="uid://c5qaw3581loeu" path="res://user_interface/level_select_menu.gd" id="1_6b5ur"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_6b5ur"]
+font = ExtResource("1_4it3q")
+font_size = 64
+font_color = Color(0, 0.33333334, 0.8, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6b5ur"]
+bg_color = Color(0.2, 0.2, 0.2, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(1, 1, 1, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jdq3x"]
+bg_color = Color(0.06666667, 0.06666667, 0.06666667, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(1, 1, 1, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_u4c5r"]
+bg_color = Color(0.33333334, 0.33333334, 0.33333334, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(1, 1, 1, 1)
+
+[node name="LevelSelectMenu" type="Control" unique_id=1244856685]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_6b5ur")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1280042127]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1561831558]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer" unique_id=888788194]
+layout_mode = 2
+theme_override_constants/margin_top = 64
+theme_override_constants/margin_bottom = 64
+
+[node name="Label" type="Label" parent="VBoxContainer/MarginContainer" unique_id=567456691]
+layout_mode = 2
+text = "Level Select"
+label_settings = SubResource("LabelSettings_6b5ur")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Filler" type="Control" parent="VBoxContainer" unique_id=45778561]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer" unique_id=1216390379]
+layout_mode = 2
+
+[node name="Filler" type="Control" parent="VBoxContainer/HBoxContainer" unique_id=758362819]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Levels" type="GridContainer" parent="VBoxContainer/HBoxContainer" unique_id=513095698]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_constants/h_separation = 16
+theme_override_constants/v_separation = 16
+columns = 4
+
+[node name="Filler2" type="Control" parent="VBoxContainer/HBoxContainer" unique_id=74184049]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Filler2" type="Control" parent="VBoxContainer" unique_id=1957404256]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="BackButton" type="Button" parent="VBoxContainer" unique_id=673887028]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_fonts/font = ExtResource("1_4it3q")
+theme_override_font_sizes/font_size = 24
+theme_override_styles/normal = SubResource("StyleBoxFlat_6b5ur")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_jdq3x")
+theme_override_styles/hover = SubResource("StyleBoxFlat_u4c5r")
+text = " Back to Main Menu "
+
+[node name="Filler3" type="Control" parent="VBoxContainer" unique_id=1671329598]
+layout_mode = 2
+size_flags_vertical = 3
+
+[connection signal="pressed" from="VBoxContainer/BackButton" to="." method="_on_back_button_pressed"]

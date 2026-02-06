@@ -1,0 +1,50 @@
+[gd_scene format=3 uid="uid://b7ovokxn6383o"]
+
+[ext_resource type="FontFile" uid="uid://bxpfu70psooq6" path="res://assets/fonts/Kenney Blocks.ttf" id="1_tb6li"]
+[ext_resource type="Script" uid="uid://d4a6ntrba6dh4" path="res://user_interface/go_to_level_button.gd" id="2_3t4lb"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3t4lb"]
+bg_color = Color(0.2, 0.2, 0.2, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(1, 1, 1, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rxwvh"]
+bg_color = Color(0.06666667, 0.06666667, 0.06666667, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(1, 1, 1, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lk1wq"]
+bg_color = Color(0.33333334, 0.33333334, 0.33333334, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(1, 1, 1, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_n8sg4"]
+bg_color = Color(0.33333334, 0.33333334, 0.33333334, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(1, 1, 1, 1)
+
+[node name="GoToLevelButton" type="Button" unique_id=1493882274]
+offset_right = 8.0
+offset_bottom = 8.0
+theme_override_fonts/font = ExtResource("1_tb6li")
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxFlat_3t4lb")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_rxwvh")
+theme_override_styles/hover = SubResource("StyleBoxFlat_lk1wq")
+theme_override_styles/focus = SubResource("StyleBoxFlat_n8sg4")
+text = " Level ? "
+script = ExtResource("2_3t4lb")
+
+[connection signal="pressed" from="." to="." method="_on_pressed"]
