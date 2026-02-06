@@ -4,6 +4,7 @@ extends CharacterBody2D
 const JUMP_SOUND: AudioStream = preload("uid://c70hcbq5jh8kc")
 const DASH_SOUND: AudioStream = preload("uid://caftjw0hndhwg")
 const DIE_SOUND: AudioStream = preload("uid://bfwxk46idfg5l")
+const JUMP_PARTICLES := preload("uid://n8klc8x0x55t")
 
 
 var _powerups: Array[Powerup] = []
@@ -89,10 +90,9 @@ func set_camera_limits(limit_right: float, limit_top: float) -> void:
 	camera_2d.limit_top = min(limit_top, minimum.y)	# min() because small values of Y is higher ("-Y is up")
 
 
-# TODO: add cloud particle effect when jumping in the air
-# TODO: add coyote time to jump?
 func jump():
 	SfxPlayer.play(JUMP_SOUND)
+	add_child(JUMP_PARTICLES.instantiate())
 	velocity.y = jump_velocity
 
 

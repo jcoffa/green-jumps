@@ -1,0 +1,35 @@
+[gd_scene format=3 uid="uid://n8klc8x0x55t"]
+
+[ext_resource type="Script" uid="uid://b8fn7icr0ju50" path="res://scenes/jump_particles.gd" id="1_0wcar"]
+
+[sub_resource type="Gradient" id="Gradient_qhqgy"]
+offsets = PackedFloat32Array(0, 0.7521739, 0.9826087)
+colors = PackedColorArray(1, 1, 1, 0.39215687, 1, 1, 1, 0.39215687, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_dqkch"]
+gradient = SubResource("Gradient_qhqgy")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_qhqgy"]
+particle_flag_disable_z = true
+angle_min = 1.0728835e-05
+angle_max = 1.0728835e-05
+direction = Vector3(0, 1, 0)
+spread = 60.0
+initial_velocity_min = 5.0
+initial_velocity_max = 5.0
+gravity = Vector3(0, 0, 0)
+linear_accel_min = -2.2351742e-06
+linear_accel_max = 39.999996
+scale_min = 3.0
+scale_max = 3.0
+color = Color(1, 1, 1, 0.39215687)
+color_ramp = SubResource("GradientTexture1D_dqkch")
+
+[node name="JumpParticles" type="GPUParticles2D" unique_id=629178432]
+emitting = false
+amount = 24
+lifetime = 0.5
+one_shot = true
+explosiveness = 1.0
+process_material = SubResource("ParticleProcessMaterial_qhqgy")
+script = ExtResource("1_0wcar")
