@@ -21,6 +21,9 @@ func _ready() -> void:
 
 	# Reset sounds
 	SfxPlayer.stop()
+	# FIXME: Make the music start once on first level load and keep playing the whole game.
+	# It's super annoying to have it restart on every level load.
+	# Still need to stop it on death and restart it after resurrecting though!
 	MusicPlayer.play(LEVEL_MUSIC, true)
 
 	# Connect level win signal

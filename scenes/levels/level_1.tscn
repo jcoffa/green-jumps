@@ -35,13 +35,15 @@ theme_override_fonts/font = ExtResource("4_x42e6")
 theme_override_font_sizes/font_size = 8
 text = "A/Left
 D/Right
-Space"
+Space
+Escape"
 
 [node name="ControlsKeyLabel2" type="Label" parent="HBoxContainer" index="1" unique_id=30583764]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("4_x42e6")
 theme_override_font_sizes/font_size = 8
 text = "-
+-
 -
 -"
 
@@ -51,7 +53,8 @@ theme_override_fonts/font = ExtResource("4_x42e6")
 theme_override_font_sizes/font_size = 8
 text = "Move left
 Move right
-Activate Powerup"
+Activate Powerup
+Pause/Unpause"
 
 [node name="Label" type="Label" parent="." index="9" unique_id=706176831]
 offset_left = 93.0

@@ -22,6 +22,7 @@ EventBus="*uid://mq3kg27ps2fa"
 MusicPlayer="*uid://132ji3slu50r"
 SfxPlayer="*uid://bmd4d2caiw0dt"
 LevelManager="*uid://c5akvnpuuarbo"
+PauseMenu="*uid://bhrfvdnwui1om"
 
 [display]
 
