@@ -25,4 +25,4 @@ func level_exists(level_number: int) -> bool:
 func is_last_level(level_number: int = 0) -> bool:
 	if level_number == 0:
 		return _current_level == levels.size()
-	return level_number == levels.size()
+	return level_number >= levels.size()
