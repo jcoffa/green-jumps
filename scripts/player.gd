@@ -5,6 +5,7 @@ const JUMP_SOUND: AudioStream = preload("uid://c70hcbq5jh8kc")
 const DASH_SOUND: AudioStream = preload("uid://caftjw0hndhwg")
 const DIE_SOUND: AudioStream = preload("uid://bfwxk46idfg5l")
 const JUMP_PARTICLES := preload("uid://n8klc8x0x55t")
+const DASH_PARTICLES = preload("uid://kwmtjqi67ojn")
 
 
 var _powerups: Array[Powerup] = []
@@ -26,6 +27,7 @@ var is_dashing: bool = false
 @onready var death_particles: GPUParticles2D = $DeathParticles
 @onready var dash_timer: Timer = $DashTimer
 @onready var death_timer: Timer = $DeathTimer
+@onready var animation_player: AnimationPlayer = $AnimationPlayer
 
 @onready var jump_velocity: float = ((2.0 * jump_height) / jump_time_to_peak) * -1.0
 @onready var jump_gravity: float = ((-2.0 * jump_height) / (jump_time_to_peak * jump_time_to_peak)) * -1.0
@@ -96,13 +98,16 @@ func jump():
 	velocity.y = jump_velocity
 
 
-# TODO: add squishing to the sprite when dashing
-#	if squish is active (sprite scale != 1.0), then move_toward() normal sprite
-#	scale by a small amount every frame. Is there a way to do this so that we always
-#	squish in the direction of the dash?
 func dash():
-	SfxPlayer.play(DASH_SOUND)
 	var direction = -1 if animated_sprite.flip_h else 1
+
+	var particles := DASH_PARTICLES.instantiate() as DashParticles
+	# Flip particles if needed, in order to match the direction of the dash
+	particles.scale *= direction
+	add_child(particles)
+
+	animation_player.play("dash")
+	SfxPlayer.play(DASH_SOUND)
 	velocity = Vector2(direction * dash_speed, 0)
 	is_dashing = true
 	dash_timer.start()
