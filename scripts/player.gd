@@ -114,11 +114,11 @@ func dash():
 
 
 func die():
+	set_physics_process(false)
 	MusicPlayer.stop()
 	SfxPlayer.play(DIE_SOUND)
-	set_physics_process(false)
+	animated_sprite.call_deferred("play", "die")
 	death_timer.start()
-	animated_sprite.play("die")
 	death_particles.emitting = true
 
 
