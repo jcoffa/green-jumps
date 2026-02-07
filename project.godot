@@ -13,7 +13,11 @@ config_version=5
 config/name="Green Jumps"
 run/main_scene="uid://b4dswwg1tbofl"
 config/features=PackedStringArray("4.6", "Forward Plus")
-config/icon="res://icon.svg"
+config/icon="uid://gjrl5hxnpmku"
+
+[audio]
+
+buses/default_bus_layout="uid://dimobaooqx80o"
 
 [autoload]
 
