@@ -8,7 +8,9 @@
 [ext_resource type="PackedScene" uid="uid://dtdf2a2d0omeh" path="res://scenes/levels/level_4.tscn" id="5_t60sa"]
 [ext_resource type="PackedScene" uid="uid://bvjditovhld2h" path="res://scenes/levels/level_6.tscn" id="6_07kbm"]
 [ext_resource type="PackedScene" uid="uid://btlq87d5hwfxi" path="res://scenes/levels/level_7.tscn" id="7_f4jvs"]
+[ext_resource type="PackedScene" uid="uid://c1gykl4tyi31k" path="res://scenes/levels/level_8.tscn" id="9_iqt61"]
+[ext_resource type="PackedScene" uid="uid://cq2d43nb4iqrc" path="res://scenes/levels/level_9.tscn" id="10_beoux"]
 
 [node name="LevelManager" type="Node" unique_id=317325850]
 script = ExtResource("1_sbx32")
-levels = Array[PackedScene]([ExtResource("2_ubea5"), ExtResource("3_t60sa"), ExtResource("4_iqt61"), ExtResource("5_t60sa"), ExtResource("5_beoux"), ExtResource("6_07kbm"), ExtResource("7_f4jvs")])
+levels = Array[PackedScene]([ExtResource("2_ubea5"), ExtResource("3_t60sa"), ExtResource("4_iqt61"), ExtResource("5_t60sa"), ExtResource("5_beoux"), ExtResource("6_07kbm"), ExtResource("7_f4jvs"), ExtResource("9_iqt61"), ExtResource("10_beoux")])
