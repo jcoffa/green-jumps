@@ -24,8 +24,12 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_h4jxi")
 
-[node name="Timer" type="Timer" parent="." unique_id=1077954660]
+[node name="RestartTimer" type="Timer" parent="." unique_id=1077954660]
 wait_time = 3.0
+one_shot = true
+
+[node name="TickSoundTimer" type="Timer" parent="." unique_id=1322608403]
+wait_time = 0.5
 one_shot = true
 
 [node name="MarginContainer" type="MarginContainer" parent="." unique_id=497420475]
