@@ -1,7 +1,7 @@
 extends Node
 
 
-func play(stream: AudioStream, single := false) -> void:
+func play(stream: AudioStream, single := false, callback = null) -> void:
 	if not stream:
 		return
 
@@ -14,6 +14,8 @@ func play(stream: AudioStream, single := false) -> void:
 			continue
 		player.stream = stream
 		player.play()
+		if callback != null:
+			player.finished.connect(callback)
 		return
 	assert(false, "All players are full, could not play sound located at <%s>" % stream.resource_path)
 

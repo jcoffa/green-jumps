@@ -1,7 +1,7 @@
 class_name Level
 extends Node
 
-const LEVEL_TRANSITION_DELAY_SECONDS := 3.0
+const LEVEL_TRANSITION_DELAY_SECONDS := 2.0
 const PLAYER_SCENE: PackedScene = preload("uid://cg8cr5s14uh4m")
 const LEVEL_THEME: AudioStream = preload("uid://0xjv5ebotqr2")
 
@@ -28,9 +28,7 @@ func _ready() -> void:
 	EventBus.level_goal_reached.connect(func():
 		await get_tree().create_timer(LEVEL_TRANSITION_DELAY_SECONDS).timeout
 		if LevelManager.is_last_level(level_number):
-			# TODO: add a victory screen for beating all the levels
-			print("TODO: Add a victory screen for beating all the levels!")
-			get_tree().quit()
+			get_tree().change_scene_to_file("res://user_interface/victory_screen.tscn")
 		else:
 			LevelManager.go_to_level(level_number+1)
 	)

@@ -1,0 +1,146 @@
+[gd_scene format=3 uid="uid://ddunnacdxyf6x"]
+
+[ext_resource type="Script" uid="uid://c84y8qqrcapxt" path="res://user_interface/victory_screen.gd" id="1_xfluw"]
+[ext_resource type="Texture2D" uid="uid://cyf705376ok3m" path="res://assets/sprites/monochrome_tilemap_transparent_packed.png" id="2_2lpu7"]
+[ext_resource type="FontFile" uid="uid://bxpfu70psooq6" path="res://assets/fonts/Kenney Blocks.ttf" id="3_5g2xg"]
+[ext_resource type="PackedScene" uid="uid://dt0ylonok05yv" path="res://scenes/pickup.tscn" id="3_xfluw"]
+[ext_resource type="Resource" uid="uid://duhbvaogicnxn" path="res://custom_resources/powerups/dash.tres" id="4_wf3kh"]
+[ext_resource type="Resource" uid="uid://6iispixm8kfq" path="res://custom_resources/powerups/jump.tres" id="5_cbd6s"]
+[ext_resource type="Resource" uid="uid://bwjoqflnnnc7y" path="res://custom_resources/powerups/hurt.tres" id="6_bg2tj"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_xqlja"]
+font = ExtResource("3_5g2xg")
+font_size = 96
+font_color = Color(1, 1, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_1aipp"]
+font = ExtResource("3_5g2xg")
+font_size = 32
+
+[sub_resource type="LabelSettings" id="LabelSettings_k2med"]
+font = ExtResource("3_5g2xg")
+font_size = 32
+font_color = Color(0, 1, 0, 1)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gdgqb"]
+atlas = ExtResource("2_2lpu7")
+region = Rect2(64, 224, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hms28"]
+atlas = ExtResource("2_2lpu7")
+region = Rect2(96, 144, 16, 32)
+
+[node name="MainMenu" type="Control" unique_id=435155144]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_xfluw")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1526446080]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=404524146]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Filler" type="Control" parent="VBoxContainer" unique_id=1372648557]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Victory" type="Label" parent="VBoxContainer" unique_id=2058460947]
+layout_mode = 2
+text = "Victory!"
+label_settings = SubResource("LabelSettings_xqlja")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer" unique_id=226182026]
+layout_mode = 2
+alignment = 1
+
+[node name="Thank1" type="Label" parent="VBoxContainer/HBoxContainer" unique_id=716533977]
+layout_mode = 2
+text = "Thanks for playing "
+label_settings = SubResource("LabelSettings_1aipp")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Thanks2Green" type="Label" parent="VBoxContainer/HBoxContainer" unique_id=1515435206]
+layout_mode = 2
+text = "Green Jumps"
+label_settings = SubResource("LabelSettings_k2med")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Thanks3" type="Label" parent="VBoxContainer/HBoxContainer" unique_id=581085377]
+layout_mode = 2
+text = ", a game by Joseph Coffa"
+label_settings = SubResource("LabelSettings_1aipp")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Thanks4" type="Label" parent="VBoxContainer" unique_id=1314951449]
+layout_mode = 2
+text = "For the January 2026 \"Guava's Glorious Game Gam\""
+label_settings = SubResource("LabelSettings_1aipp")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Filler2" type="Control" parent="VBoxContainer" unique_id=709455999]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="SpecialThanks" type="Label" parent="VBoxContainer" unique_id=514734155]
+layout_mode = 2
+text = "Special Thanks to
+Sage Beluli, for making the music and SFX"
+label_settings = SubResource("LabelSettings_1aipp")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Filler3" type="Control" parent="VBoxContainer" unique_id=423842028]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Filler4" type="Control" parent="VBoxContainer" unique_id=475307105]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1697649061]
+position = Vector2(800, 456)
+scale = Vector2(6, 6)
+texture = SubResource("AtlasTexture_gdgqb")
+
+[node name="Sprite2D2" type="Sprite2D" parent="." unique_id=1844796445]
+modulate = Color(1, 1, 0, 1)
+position = Vector2(1280, 800.00006)
+scale = Vector2(6, 6)
+texture = SubResource("AtlasTexture_hms28")
+
+[node name="Pickup" parent="." unique_id=784839090 instance=ExtResource("3_xfluw")]
+position = Vector2(576, 768)
+scale = Vector2(6, 6)
+powerup = ExtResource("4_wf3kh")
+
+[node name="Pickup2" parent="." unique_id=137706103 instance=ExtResource("3_xfluw")]
+position = Vector2(800, 768)
+scale = Vector2(6, 6)
+powerup = ExtResource("5_cbd6s")
+
+[node name="Pickup3" parent="." unique_id=891538437 instance=ExtResource("3_xfluw")]
+position = Vector2(1024, 768)
+scale = Vector2(6, 6)
+powerup = ExtResource("6_bg2tj")
