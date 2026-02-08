@@ -2,6 +2,31 @@
 
 [ext_resource type="Script" uid="uid://digi0a63852qy" path="res://scenes/level_goal.gd" id="1_dpp3b"]
 [ext_resource type="Texture2D" uid="uid://cyf705376ok3m" path="res://assets/sprites/monochrome_tilemap_transparent_packed.png" id="1_g75lt"]
+[ext_resource type="Texture2D" uid="uid://q58p7pe0tpwq" path="res://assets/sprites/twinkle.png" id="2_km17l"]
+
+[sub_resource type="Gradient" id="Gradient_pgd75"]
+offsets = PackedFloat32Array(0, 0.7173913, 1)
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_iek63"]
+gradient = SubResource("Gradient_pgd75")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_mm80x"]
+lifetime_randomness = 0.3
+particle_flag_disable_z = true
+emission_shape = 1
+emission_sphere_radius = 4.0
+angle_min = -29.99999
+angle_max = 30.000011
+direction = Vector3(0, -1, 0)
+spread = 60.0
+initial_velocity_min = 4.0
+initial_velocity_max = 8.0
+angular_velocity_min = -60.000015
+angular_velocity_max = 59.99998
+gravity = Vector3(0, 0, 0)
+color = Color(1, 1, 0.8156863, 1)
+color_ramp = SubResource("GradientTexture1D_iek63")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_g75lt"]
 size = Vector2(6, 24)
@@ -28,6 +53,13 @@ hue_variation_max = 0.49999997
 
 [node name="LevelGoal" type="Node2D" unique_id=256670110]
 script = ExtResource("1_dpp3b")
+
+[node name="Twinkles" type="GPUParticles2D" parent="." unique_id=929489237]
+position = Vector2(0, -24)
+amount = 5
+texture = ExtResource("2_km17l")
+lifetime = 4.0
+process_material = SubResource("ParticleProcessMaterial_mm80x")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=377554588]
 self_modulate = Color(1, 1, 0, 1)
